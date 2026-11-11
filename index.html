@@ -605,6 +605,6 @@ $('#modal').addEventListener('click',e=>{if(e.target.id==='modal'&&!$('#mbox .sp
 addEventListener('resize',()=>{clearTimeout(window._rz);window._rz=setTimeout(sizeSig,200)});
 })();
 </script>
-<script>if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(()=>{})}</script>
+<script>if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!window.__rl){window.__rl=1;location.reload()}})}</script>
 </body>
 </html>
